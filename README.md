@@ -167,25 +167,6 @@ La aplicación incluye:
 - Los tokens JWT expiran después de 60 minutos
 - La eliminación de productos es lógica (soft delete)
 
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Por favor:
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📄 Licencia
-
-Este proyecto es de código abierto y está disponible bajo la licencia MIT.
-
 ## 👤 Autor
 
-Tu Nombre - [@tu_usuario](https://github.com/TU_USUARIO)
-
-## 🙏 Agradecimientos
-
-- Documentación de ASP.NET Core
-- Comunidad de .NET
+Andres Felipe Aros Escobar
