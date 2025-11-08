@@ -1,0 +1,115 @@
+### Variables
+@baseUrl = http://localhost:5290
+@httpsUrl = https://localhost:7063
+
+### 1. Obtener todos los productos
+GET {{baseUrl}}/api/productos
+Accept: application/json
+
+### 2. Obtener un producto por ID
+GET {{baseUrl}}/api/productos/1
+Accept: application/json
+
+### 3. Crear un nuevo producto
+POST {{baseUrl}}/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Laptop Dell XPS 15",
+  "descripcion": "Laptop de alto rendimiento con procesador Intel i7",
+  "precio": 25000.00,
+  "stock": 5
+}
+
+### 4. Crear otro producto
+POST {{baseUrl}}/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Mouse Logitech MX Master 3",
+  "descripcion": "Mouse inalámbrico ergonómico",
+  "precio": 1500.00,
+  "stock": 20
+}
+
+### 5. Crear un tercer producto
+POST {{baseUrl}}/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Teclado Mecánico Keychron K2",
+  "descripcion": "Teclado mecánico inalámbrico con switches Gateron",
+  "precio": 2500.00,
+  "stock": 15
+}
+
+### 6. Actualizar un producto
+PUT {{baseUrl}}/api/productos/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "nombre": "Laptop Dell XPS 15 - Actualizada",
+  "descripcion": "Laptop de alto rendimiento con procesador Intel i7 y 32GB RAM",
+  "precio": 28000.00,
+  "stock": 3
+}
+
+### 7. Buscar productos
+GET {{baseUrl}}/api/productos/buscar?termino=laptop
+Accept: application/json
+
+### 8. Buscar productos por otro término
+GET {{baseUrl}}/api/productos/buscar?termino=mouse
+Accept: application/json
+
+### 9. Eliminar un producto (soft delete)
+DELETE {{baseUrl}}/api/productos/2
+
+### 10. Verificar que el producto eliminado no aparece
+GET {{baseUrl}}/api/productos
+Accept: application/json
+
+### 11. Intentar obtener un producto eliminado
+GET {{baseUrl}}/api/productos/2
+Accept: application/json
+
+### 12. Crear producto con validación (nombre vacío - debe fallar)
+POST {{baseUrl}}/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "",
+  "descripcion": "Producto sin nombre",
+  "precio": 100.00,
+  "stock": 10
+}
+
+### 13. Crear producto con precio negativo (debe fallar)
+POST {{baseUrl}}/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Producto con precio negativo",
+  "descripcion": "Este producto no debería crearse",
+  "precio": -100.00,
+  "stock": 10
+}
+
+### 14. Obtener producto con ID inválido (debe fallar)
+GET {{baseUrl}}/api/productos/0
+Accept: application/json
+
+### 15. Actualizar producto con IDs no coincidentes (debe fallar)
+PUT {{baseUrl}}/api/productos/1
+Content-Type: application/json
+
+{
+  "id": 999,
+  "nombre": "Producto con ID incorrecto",
+  "descripcion": "Los IDs no coinciden",
+  "precio": 100.00,
+  "stock": 5
+}
+
+###
